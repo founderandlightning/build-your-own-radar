@@ -1,1 +1,1 @@
-release: npm install && npm run build:dev
+web: npm install && npm run build:dev
