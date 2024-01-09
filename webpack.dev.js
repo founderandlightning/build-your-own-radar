@@ -6,7 +6,7 @@ const cssnano = require('cssnano')
 
 const common = require('./webpack.common.js')
 const config = require('./src/config')
-console.log('Log info', config)
+console.log('Log info', config())
 const { graphConfig, uiConfig } = require('./src/graphing/config')
 
 const featureToggles = config().development.featureToggles
