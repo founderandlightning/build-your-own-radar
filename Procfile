@@ -1,1 +1,1 @@
-release: npm run dev
+release: npm install && npm run build:dev
