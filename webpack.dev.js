@@ -9,7 +9,7 @@ const config = require('./src/config')
 console.log('Log info', config())
 const { graphConfig, uiConfig } = require('./src/graphing/config')
 
-const featureToggles = config().development.featureToggles
+const featureToggles = config().featureToggles
 const main = ['./src/site.js']
 const scssVariables = []
 
