@@ -9,15 +9,14 @@ const config = require('./src/config')
 
 const { graphConfig, uiConfig } = require('./src/graphing/config')
 
-const featureToggles = config().development.featureToggles
+const featureToggles = config().featureToggles
 const main = ['./src/site.js']
 const scssVariables = []
 
 var Bugsnag = require('@bugsnag/js')
 Bugsnag.start(process.env.BUGSNAG_API_KEY)
 
-const port = process.env.PORT || 3000;
-console.log(port);
+
 Object.entries(graphConfig).forEach(function ([key, value]) {
   scssVariables.push(`$${key}: ${value}px;`)
 })
@@ -76,8 +75,5 @@ module.exports = merge(common, {
       'process.env.ENVIRONMENT': JSON.stringify('development'),
     }),
   ],
-  devtool: 'source-map',
-  devServer: {
-    port: port,
-  },
+  devtool: 'source-map'
 })
