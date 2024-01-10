@@ -17,7 +17,7 @@ var Bugsnag = require('@bugsnag/js')
 Bugsnag.start(process.env.BUGSNAG_API_KEY)
 
 const port = process.env.PORT || 3000;
-
+console.log(port);
 Object.entries(graphConfig).forEach(function ([key, value]) {
   scssVariables.push(`$${key}: ${value}px;`)
 })
