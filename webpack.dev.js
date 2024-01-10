@@ -6,7 +6,7 @@ const cssnano = require('cssnano')
 
 const common = require('./webpack.common.js')
 const config = require('./src/config')
-console.log('Log info', config())
+
 const { graphConfig, uiConfig } = require('./src/graphing/config')
 
 const featureToggles = config().development.featureToggles
@@ -16,6 +16,7 @@ const scssVariables = []
 var Bugsnag = require('@bugsnag/js')
 Bugsnag.start(process.env.BUGSNAG_API_KEY)
 
+const port = process.env.PORT || 3000;
 
 Object.entries(graphConfig).forEach(function ([key, value]) {
   scssVariables.push(`$${key}: ${value}px;`)
@@ -76,4 +77,7 @@ module.exports = merge(common, {
     }),
   ],
   devtool: 'source-map',
+  devServer: {
+    port: port,
+  },
 })
