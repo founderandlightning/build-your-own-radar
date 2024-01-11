@@ -13,10 +13,6 @@ const featureToggles = config().featureToggles
 const main = ['./src/site.js']
 const scssVariables = []
 
-var Bugsnag = require('@bugsnag/js')
-Bugsnag.start(process.env.BUGSNAG_API_KEY)
-
-
 Object.entries(graphConfig).forEach(function ([key, value]) {
   scssVariables.push(`$${key}: ${value}px;`)
 })
