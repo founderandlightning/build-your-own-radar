@@ -77,6 +77,8 @@ module.exports = merge(common, {
   ],
   devtool: 'source-map',
   devServer: {
-    disableHostCheck: true,
+    allowedHosts: [
+      'radar-surinder-2a932c839e59.herokuapp.com'
+    ],
   }
 })
