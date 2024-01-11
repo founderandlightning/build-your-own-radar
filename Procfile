@@ -1,1 +1,1 @@
-web: npm install --include=dev && npm run dev
+web: npm install --include=dev && npm run build:dev

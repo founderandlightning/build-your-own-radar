@@ -80,5 +80,6 @@ module.exports = merge(common, {
     allowedHosts: [
       'radar-surinder-2a932c839e59.herokuapp.com'
     ],
+    port: process.env.PORT || 3000,
   }
 })
