@@ -75,5 +75,8 @@ module.exports = merge(common, {
       'process.env.ENVIRONMENT': JSON.stringify('development'),
     }),
   ],
-  devtool: 'source-map'
+  devtool: 'source-map',
+  devServer: {
+    public: 'radar-surinder-2a932c839e59.herokuapp.com'
+  }
 })
