@@ -316,9 +316,10 @@ const Factory = function () {
       }
     })
 
-    const domainName = DomainName(window.location.search.substring(1))
+    //const domainName = DomainName(window.location.search.substring(1));
 
-    const paramId = getDocumentOrSheetId()
+    const paramId = process.env.SHEET_ID || getDocumentOrSheetId();
+    const domainName = DomainName(paramId);
     if (paramId && paramId.endsWith('.csv')) {
       sheet = CSVDocument(paramId)
       sheet.init().build()
@@ -326,7 +327,7 @@ const Factory = function () {
       sheet = JSONFile(paramId)
       sheet.init().build()
     } else if (domainName && domainName.endsWith('google.com') && paramId) {
-      const sheetName = getSheetName()
+      const sheetName = getSheetName() || 'Radar';
       sheet = GoogleSheet(paramId, sheetName)
       sheet.init().build()
     } else {
