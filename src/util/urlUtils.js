@@ -19,7 +19,7 @@ function getDocumentOrSheetId() {
   return queryParams.documentId ?? queryParams.sheetId
 }
 
-function getSheetName() {
+function getSheetName(url) {
   const queryParams = QueryParams(window.location.search.substring(1))
   return queryParams.sheetName
 }

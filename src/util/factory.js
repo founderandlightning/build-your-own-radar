@@ -327,7 +327,7 @@ const Factory = function () {
       sheet = JSONFile(paramId)
       sheet.init().build()
     } else if (domainName && domainName.endsWith('google.com') && paramId) {
-      const sheetName = getSheetName() || 'Radar';
+      const sheetName = getSheetName();
       sheet = GoogleSheet(paramId, sheetName)
       sheet.init().build()
     } else {
