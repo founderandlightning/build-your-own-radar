@@ -778,9 +778,9 @@ const Radar = function (size, radar) {
     if (featureToggles.UIRefresh2022) {
       renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar)
       renderSearch(radarHeader, quadrants)
-      renderAlternativeRadars(radarFooter, alternatives, currentSheet)
       renderQuadrantTables(quadrants, rings)
-      renderButtons(radarFooter)
+      //renderAlternativeRadars(radarFooter, alternatives, currentSheet)
+      //renderButtons(radarFooter)
 
       const landingPageElements = document.querySelectorAll('main .home-page')
       landingPageElements.forEach((elem) => {
@@ -788,7 +788,7 @@ const Radar = function (size, radar) {
       })
     } else {
       plotRadarHeader()
-      plotRadarFooter()
+      //plotRadarFooter()
       if (alternatives.length) {
         plotAlternativeRadars(alternatives, currentSheet)
       }

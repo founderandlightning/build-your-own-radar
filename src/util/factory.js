@@ -317,7 +317,6 @@ const Factory = function () {
     })
 
     //const domainName = DomainName(window.location.search.substring(1));
-
     const paramId = process.env.SHEET_ID || getDocumentOrSheetId();
     const domainName = DomainName(paramId);
     if (paramId && paramId.endsWith('.csv')) {
@@ -340,11 +339,11 @@ const Factory = function () {
           '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
           ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/byor">Read this first.</a></p></div>'
 
-        plotBanner(content, bannerText)
+        //plotBanner(content, bannerText)
 
         plotForm(content)
 
-        plotFooter(content)
+        //plotFooter(content)
       }
 
       setDocumentTitle()
@@ -371,10 +370,10 @@ function plotLoading(content) {
     var bannerText =
       '<h1>Building your radar...</h1><p>Your Technology Radar will be available in just a few seconds</p>'
     plotBanner(content, bannerText)
-    plotFooter(content)
+    //plotFooter(content)
   } else {
-    document.querySelector('.helper-description > p').style.display = 'none'
-    document.querySelector('.input-sheet-form').style.display = 'none'
+    // document.querySelector('.helper-description > p').style.display = 'none'
+    // document.querySelector('.input-sheet-form').style.display = 'none'
     document.querySelector('.helper-description .loader-text').style.display = 'block'
   }
 }
@@ -446,7 +445,7 @@ function plotErrorMessage(exception, fileType) {
     d3.selectAll('.loading').remove()
     plotError(exception, fileType)
 
-    plotFooter(content)
+    //plotFooter(content)
   }
 }
 
