@@ -1,5 +1,3 @@
-require('dotenv').config()
-console.log('process.env', process.env)
 const config = () => {
   const env = {
     production: {
@@ -17,6 +15,7 @@ const config = () => {
       host: process.env.HOST || 'localhost',
     },
   }
+  console.log('process.env', process.env)
   return process.env.ENVIRONMENT ? env[process.env.ENVIRONMENT] : env
 }
 module.exports = config
