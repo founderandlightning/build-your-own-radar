@@ -3,12 +3,15 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 const cssnano = require('cssnano')
-
+const path = require('path')
+const dotenv = require('dotenv').config({
+  path: path.join(__dirname, '.env')
+})
 const common = require('./webpack.common.js')
 const config = require('./src/config')
 const { graphConfig, uiConfig } = require('./src/graphing/config')
 
-const featureToggles = config().production.featureToggles
+const featureToggles = config().featureToggles
 const main = ['./src/site.js']
 const scssVariables = []
 
@@ -68,7 +71,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.ENVIRONMENT': JSON.stringify('production'),
+      'process.env': JSON.stringify(dotenv.parsed),
     }),
   ],
 })
