@@ -8,7 +8,6 @@ const args = require('yargs').argv
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const nodeExternals = require('webpack-node-externals')
 
 const env = args.envFile
 if (env) {
@@ -87,6 +86,5 @@ module.exports = {
       },
     ],
   },
-  externals: [nodeExternals()],
   plugins: plugins,
 }
