@@ -69,6 +69,7 @@ module.exports = merge(common, {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(dotenv.parsed),
+      'process.env.ENVIRONMENT': JSON.stringify('production'),
     }),
   ],
 })

@@ -68,6 +68,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(dotenv.parsed),
+      'process.env.ENVIRONMENT': JSON.stringify('development'),
     }),
   ],
   devtool: 'source-map',
