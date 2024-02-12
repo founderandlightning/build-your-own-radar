@@ -75,8 +75,8 @@ module.exports = merge(common, {
   devtool: 'source-map',
   devServer: {
     allowedHosts: [
-      host,
+      process.env.HOST || 'fnl-radar-e294fbed9990.herokuapp.com'
     ],
-    port,
+    port: process.env.PORT || 3000,
   }
 })
