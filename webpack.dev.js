@@ -4,9 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 const cssnano = require('cssnano')
 const path = require('path')
-const dotenv = require('dotenv').config({
-  path: path.join(__dirname, '.env')
-})
+const dotenv = require('dotenv').config()
 const common = require('./webpack.common.js')
 const config = require('./src/config')
 
